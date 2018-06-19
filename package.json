@@ -4,17 +4,25 @@
     "author": "ZaninAndrea",
     "homepage": "./",
     "description": "An example of an autoupdating electron app",
-    "repository": "https://github.com/ZaninAndrea/electron-autoupdate-example",
+    "repository": "https://github.com/mariocao/electron-autoupdate-example",
     "main": "electron.js",
     "dependencies": {
-        "electron-updater": "^2.10.1"
+        "electron-updater": "2.21.10"
     },
     "scripts": {
-            "build": "build --win",
-            "ship": "build --win -p always"
+            "build": "build --linux",
+            "ship": "build --linux -p always"
         },
     "devDependencies": {
         "electron": "^1.7.5",
-        "electron-builder": "^19.20.1"
+        "electron-builder": "20.13.3"
+    },
+    "build": {
+        "productName": "AutoupdateExample",
+        "artifactName": "ElectronUpdate.AppImage",
+        "appId": "io.github.mariocao.electron-autoupdate-example",
+        "linux": {
+            "target": "AppImage"
+        }
     }
 }
